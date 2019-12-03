@@ -7,7 +7,6 @@ function getQuote(){
         method: `GET`,
         url: `/quote`
     }).then(function(response){
-        console.log('response:', response);
         renderQuote(response);
     }).catch(function(error){
     alert(`something went wrong`);
@@ -17,8 +16,6 @@ function getQuote(){
 
 function renderQuote(quote){
     $(`#quote-output`).empty();
-    for(let i=0; i<quote.length; i++) {
-        $(`#quote-output`).append(`<div>${quote[i].quote}</div>`);
-        $(`#quote-output`).append(`<div>${quote[i].name}</div>`);        
-    }
+        $(`#quote-output`).append(`<div>${quote[0].quote}</div>`);
+        $(`#quote-output`).append(`<div>${quote[0].name}</div>`);
 }
