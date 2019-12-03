@@ -1,5 +1,6 @@
 $(document).ready(function() {
     getQuote();
+    $(`#quote-output`).on(`click`, `#refresh-btn`, getQuote);
 });
 
 function getQuote(){
@@ -18,4 +19,5 @@ function renderQuote(quote){
     $(`#quote-output`).empty();
         $(`#quote-output`).append(`<div>${quote[0].quote}</div>`);
         $(`#quote-output`).append(`<div>${quote[0].name}</div>`);
+        $(`#quote-output`).append(`<button id="refresh-btn">New quote</button>`);
 }
