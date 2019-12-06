@@ -53,11 +53,12 @@ function renderBackground(bg){
 function renderQuote(quote){
     let $main = $(`#quote-output`)
     $main.empty();
+    $(`#btn-output`).empty();
     let $el = $main.append(`<div id="main-output"></div>`)
     $el.append(`<div class="text">${quote[0].quote}</div>`);
     $el.append(`<div class="text">${quote[0].name}</div>`);
     $main.append($el);
-    $(`#btn-output`).append(`<button id="refresh-btn">New quote ${count}</button>`);
+    $(`#btn-output`).append(`<button id="refresh-btn">&#187; NIHILIZE ME CAP'N &#171;</button>`);
 }
 
 function toggleText(){

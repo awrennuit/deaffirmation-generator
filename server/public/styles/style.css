@@ -7,13 +7,20 @@ body {
     background-color: lightblue;
 }
 
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
 #quote-output {
-    background-image: url("../images/hills.jpg");
     background-repeat:no-repeat;
-    background-size:contain;
+    background-size:cover;
     height: 500px;
     text-align: center;
+    border: 10px groove rgb(128, 98, 60);
+    box-shadow: 10px 10px 5px #444;
 }
+
 
 img {
     height: 500px;
@@ -27,4 +34,35 @@ img {
 .font-on {
     letter-spacing: -3px;
     font-family: "Impact", fantasy, sans-serif;
+}
+
+#btn-output {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#refresh-btn {
+    font-size: 3em;
+    animation: colors 5s alternate infinite;
+    background-color: rgb(167, 255, 248);
+    border: 3px outset goldenrod;
+}
+#refresh-btn:hover {
+    background-color: rgb(157, 231, 233);
+    cursor: pointer;
+}
+
+@keyframes colors {
+    25% {
+        color: blue
+    }
+    50% {
+        color: purple;
+    }
+    75% {
+        color: royalblue;
+    }
+    100% {
+        color: darkslateblue;
+    }
 }
