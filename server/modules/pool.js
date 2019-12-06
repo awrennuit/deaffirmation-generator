@@ -1,22 +1,39 @@
 const pg = require(`pg`);
-const Pool = pg.Pool;
+const url = require(`url`);
 
-const config = {
-  database: `quotes`,
-  host: `localhost`,
-  port: 5432,
-  max: 10,
-  idleTimeoutMillis: 30000
-};
+let config = {};
+if(process.env.DATABASE_URL){
+  const params = url.parse(process.env.DATABASE_URL);
+  const auth = params.auth.split(`:`);
+  config = {
+    user: auth[0],
+    password: auth[1],
+    host: params.hostname,
+    port: params.port,
+    database: params.pathname.split('/')[1],
+    ssl: true,
+    max: 10,
+    idleTimeoutMillis: 30000
+  };
+}
+else{
+  config = {
+    host: `localhost`,
+    port: 5432,
+    database: `quotes`,
+    max: 10,
+    idleTimeoutMillis: 30000
+  };
+}
 
-const pool = new pg.Pool(config);
+const pool = pg.Pool(config);
 
-pool.on(`connect`, (client) => {
+pool.on(`connect`, ()=>{
   console.log('pg connected');
 });
 
-pool.on(`error`, (err, client) => {
-  console.log('Unexpected error in pg', err);
+pool.on(`error`, (error)=>{
+  console.log('Unexpected error in pg', error);
   process.exit(-1);
 });
 
