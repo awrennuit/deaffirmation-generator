@@ -5,7 +5,7 @@ Duration: evening project
 
 I was thinking of small, easy things to build to help with my fundamentals. Affirmation generators are everywhere, so I put my own personal twist on them. Click the button to cycle through random Shutterstock images and random quotes.
 
-To see the fully functional site, please visit: https://fierce-tor-83498.herokuapp.com
+<!-- To see the fully functional site, please visit:  -->
 
 ## Technologies Used
 - Javascript (jQuery) https://jquery.com/download/
