@@ -6,7 +6,7 @@ Duration: evening project
 I was thinking of small, easy things to build to help with my fundamentals. Affirmation generators are everywhere, so I put my own personal twist on them. Click the button to cycle through random Shutterstock images and random quotes.
 
 ## Technologies Used
-- Javascript
+- JavaScript
 - jQuery
 - Nodejs
 - PostgreSQL
