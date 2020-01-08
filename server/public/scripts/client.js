@@ -33,19 +33,12 @@ function getQuote(){
 function incrementCount(){
     count++;
     getQuote();
-    if(count % 10 == 0){
-        toggleText();
-    }
-    else{
-        $(`#quote-output`).removeClass(`font-on`);
-    }
+    toggleText();
 }
 
 function renderBackground(bg){
-    console.log('bg', bg);
     let arr = bg[0].name;
     let img = arr.replace(/"/g,"");
-    console.log(img);
     let $main = $(`#quote-output`);
     $main.css("background-image", `url(../images/${img})`);
 }
@@ -62,6 +55,8 @@ function renderQuote(quote){
 }
 
 function toggleText(){
-    console.log('in count');
-    $(`#quote-output`).toggleClass(`font-on`);
+    count % 10 == 0 ?
+        $(`#quote-output`).toggleClass(`font-on`)
+        :
+        $(`#quote-output`).removeClass(`font-on`);
 }
